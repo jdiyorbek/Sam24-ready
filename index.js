@@ -27,7 +27,7 @@ const adminRouter = require("./routes/admin");
 const MongoUrl = "mongodb+srv://Admin:adminjon@sam24.oipdrdw.mongodb.net/Sam24";
 mongoose.connect(MongoUrl);
 mongoose.connection.on("connected", () => {
-    console.log("MongoDB connected succesfully");
+  console.log("MongoDB connected succesfully");
 });
 
 app.use(express.static("public"));
@@ -37,9 +37,9 @@ app.set("views", `${__dirname}/views`);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
-    expressSession({
-        secret: "jdiyorbek",
-    })
+  expressSession({
+    secret: "jdiyorbek",
+  })
 );
 
 app.use("/", homeRouter);
@@ -51,15 +51,15 @@ app.use("/contact", contactRouter);
 app.use("/admin", adminRouter);
 
 app.get("/logout", (req, res) => {
-    req.session.destroy(() => {
-        res.redirect("/admin");
-    });
+  req.session.destroy(() => {
+    res.redirect("/admin");
+  });
 });
 
 app.use((req, res) => {
-    res.render("404");
+  res.render("404");
 });
 
-app.listen(5000, (req, res) => {
-    console.log("Server ishga tushdi...");
+app.listen(3025, (req, res) => {
+  console.log("Server ishga tushdi...");
 });
