@@ -2,6 +2,7 @@ const { Router } = require("express");
 const router = Router();
 const ArticleModel = require("../models/article");
 const adModel = require("../models/ad");
+const middlewareAuth = require("../middleware/auth");
 
 router.get("/", (req, res) => {
   res.redirect("/");

@@ -4,6 +4,17 @@
     @!section('head')
 </head>
 <body>
+    
+    @if(Auth)
+        <div style="width: 100%; height: 50px; background: black;">
+            <a href="/admin/edit-article/" style="color: white;">
+                Tahrirlash 
+            </a>
+        </div>
+    @endif
+        
+    
+    
     <!-- Header section start -->
     <div class="container">
         <header class="header">

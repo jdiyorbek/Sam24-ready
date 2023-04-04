@@ -22,6 +22,12 @@ const adminRouter = require("./routes/admin");
 
 // ROUTES
 
+// MIDDLEWARE
+
+// const middlewareAuth = require("./middleware/auth");
+
+// MIDDLEWARE
+
 // const MongoUrl = "mongodb+srv://jdiyorbek:rosALPrR8ji63w25@cluster0.h2d06qj.mongodb.net/node-blog"
 
 const MongoUrl = "mongodb+srv://Admin:adminjon@sam24.oipdrdw.mongodb.net/Sam24";
@@ -39,8 +45,12 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   expressSession({
     secret: "jdiyorbek",
+    resave: false,
+    saveUninitialized: false,
   })
 );
+
+// app.use(middlewareAuth);
 
 app.use("/", homeRouter);
 app.use("/economy", economyRouter);
