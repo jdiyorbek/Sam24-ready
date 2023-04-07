@@ -12,7 +12,7 @@
 
 <div class="container d-flex align-items-center justify-content-center flex-column p-3">
     <h2 class="p-2">Admin ma'lumotlarini o'zgartirish</h2>
-    <form class="form-createArticle" action="/admin/admins/add" method="POST">
+    <form class="form-createArticle" action={{"/admin/admins/edit-admin/" + chosenAdmin.id}} method="POST">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Ism</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Ism" name="fname" value="{{chosenAdmin.fname}}">
@@ -80,6 +80,6 @@
     }
 </style>
 
-<script src="boot.js "></script>
+<script src="/bootstrap/boot.js "></script>
 
 @endsection
